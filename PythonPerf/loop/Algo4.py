@@ -7,10 +7,10 @@ y = ti.field(dtype=ti.i32, shape=())
 
 @ti.kernel
 def compteur():
-    for i in range(100_000_000):
+    for i in range(1_000_000_000):
         y[None] = i
 
 compteur()
 print("Résultat :", y[None])
 
-# 1,3 secondes
+# 2,1 secondes

@@ -11,11 +11,13 @@ UPDATE_DELAY = 100  # millisecondes
 # Création de la fenêtre
 window = tk.Tk()
 window.title("Jeu de la Vie de Conway")
-canvas = tk.Canvas(window, width=GRID_WIDTH * CELL_SIZE, height=GRID_HEIGHT * CELL_SIZE, bg="black")
-canvas.pack()
 # Label pour afficher le temps
 info_label = tk.Label(window, text="", fg="white", bg="black", font=("Courier", 12))
 info_label.pack()
+
+canvas = tk.Canvas(window, width=GRID_WIDTH * CELL_SIZE, height=GRID_HEIGHT * CELL_SIZE, bg="black")
+canvas.pack()
+
 
 
 # Grille : 0 = morte, 1 = vivante

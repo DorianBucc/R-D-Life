@@ -6,17 +6,18 @@ import random
 
 # Paramètres
 CELL_SIZE = 10
-GRID_WIDTH = 60
-GRID_HEIGHT = 40
-UPDATE_DELAY = 100
+GRID_WIDTH = 100
+GRID_HEIGHT = 60
+UPDATE_DELAY = 200
 
 # Tkinter : fenêtre
 window = tk.Tk()
 window.title("Jeu de la Vie optimisé")
-canvas = tk.Canvas(window, width=GRID_WIDTH * CELL_SIZE, height=GRID_HEIGHT * CELL_SIZE, bg="black")
-canvas.pack()
 info_label = tk.Label(window, text="", fg="white", bg="black", font=("Courier", 12))
 info_label.pack()
+canvas = tk.Canvas(window, width=GRID_WIDTH * CELL_SIZE, height=GRID_HEIGHT * CELL_SIZE, bg="black")
+canvas.pack()
+
 
 # Grille numpy
 grid = np.random.choice([0, 1], size=(GRID_HEIGHT, GRID_WIDTH)).astype(np.uint8)

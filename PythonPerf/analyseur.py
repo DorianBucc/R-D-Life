@@ -20,9 +20,6 @@ def analyser_script(script_path):
         lignes = f.readlines()
         print(f"📄 Nombre de lignes : {len(lignes)}")
 
-    # Tracemalloc pour voir la mémoire (facultatif)
-    tracemalloc.start()
-
     # Temps d'exécution
     debut = time.time()
     try:
@@ -40,12 +37,7 @@ def analyser_script(script_path):
     # Affichage du temps
     duree = fin - debut
     print(f"⏱️ Temps d'exécution : {duree:.3f} secondes")
-
-    # Mémoire
-    current, peak = tracemalloc.get_traced_memory()
-    tracemalloc.stop()
-    print(f"📈 Mémoire utilisée : {current / 1024:.1f} Ko (pic : {peak / 1024:.1f} Ko)")
-
+    
     # Résultat de l'exécution
     print("\n--- Sortie du script ---")
     print(result.stdout)
